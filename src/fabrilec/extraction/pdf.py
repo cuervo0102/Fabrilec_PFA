@@ -11,6 +11,13 @@ MIN_CHARS_PER_PAGE = 40
 RUN_OCR = True
 
 
+def _long_path(path: str) -> str:
+    abs_path = os.path.abspath(path)
+    if os.name == "nt" and not abs_path.startswith("\\\\?\\"):
+        abs_path = "\\\\?\\" + abs_path
+    return abs_path
+
+
 def extract_pdf(path: str) -> dict:
     text_pages = []
     method = "text"
@@ -35,7 +42,7 @@ def extract_pdf(path: str) -> dict:
         ocr_pages = []
         try:
             for i in range(1, max_ocr_pages + 1):
-                images = convert_from_path(path, dpi=150, first_page=i, last_page=i)
+                images = convert_from_path(_long_path(path), dpi=150, first_page=i, last_page=i)
                 if images:
                     ocr_pages.append(pytesseract.image_to_string(images[0], lang="fra"))
                     del images
