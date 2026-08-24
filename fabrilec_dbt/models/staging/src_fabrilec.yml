@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: fabrilec
+    schema: public
+    tables:
+      - name: raw_documents
+        description: "Raw extracted text from tender dossiers, loaded by the extraction/loading pipeline (Airflow-orchestrated)."
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: tender_ref
+            tests:
+              - not_null
+          - name: relative_path
+            tests:
+              - not_null

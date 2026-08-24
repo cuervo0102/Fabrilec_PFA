@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: mart_documents_summary
+    description: "One row per tender dossier, summarizing document counts, extraction quality, and which key document types are present."
+    columns:
+      - name: tender_ref
+        tests:
+          - unique
+          - not_null
+      - name: n_documents
+        tests:
+          - not_null

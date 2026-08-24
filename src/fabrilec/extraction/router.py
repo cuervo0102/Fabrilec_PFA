@@ -13,11 +13,12 @@ def discover_files(root_folder: str):
     for dirpath, _dirnames, filenames in os.walk(root_folder):
         for name in filenames:
             if name.startswith("~$"):
-                continue 
+                continue
             ext = os.path.splitext(name)[1].lower()
             if ext in SUPPORTED_EXTENSIONS:
                 full_path = os.path.join(dirpath, name)
                 relative_path = os.path.relpath(full_path, root_folder)
+                relative_path = relative_path.replace(os.sep, "/")  
                 yield full_path, relative_path
 
 

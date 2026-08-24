@@ -54,9 +54,9 @@ def _extract_doc_libreoffice(path: str) -> dict:
         try:
             subprocess.run(
                 ["libreoffice", "--headless", "--norestore",
-                 f"-env:UserInstallation=file://{profile_dir}",
-                 "--convert-to", "docx", "--outdir", tmpdir, path],
-                check=True, capture_output=True, timeout=30,
+                f"-env:UserInstallation=file://{profile_dir}",
+                "--convert-to", "docx", "--outdir", tmpdir, path],
+                check=True, capture_output=True, timeout=90,  
             )
         except Exception as e:
             return {"text": "", "method": "doc_conversion_failed", "error": str(e), "n_pages": None, "char_count": 0}
