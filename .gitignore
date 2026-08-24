@@ -1,1 +1,10 @@
-venv 
+venv/
+__pycache__/
+*.pyc
+.env
+data/raw_dossiers/
+extracted/
+extraction_results.json
+airflow/logs/
+*.egg-info/
+.pytest_cache/

@@ -1,0 +1,75 @@
+[0m10:12:56.109851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C519236270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B6CFD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B6CF9D0>]}
+
+
+============================== 10:12:56.139368 | f3250d54-62c0-4ad3-a65f-8dd3b4141dc7 ==============================
+[0m10:12:56.139368 [info ] [MainThread]: Running with dbt=1.12.3
+[0m10:12:56.140759 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\DELL\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt init fabrilec_dbt', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m10:12:56.370798 [debug] [MainThread]: Starter project path: C:\Users\DELL\Desktop\PythonFaberlic_Project\venv\Lib\site-packages\dbt\include\starter_project
+[0m10:12:56.402142 [info ] [MainThread]: Setting up your profile.
+[0m10:14:12.979523 [info ] [MainThread]: Profile fabrilec_dbt written to C:\Users\DELL\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m10:14:12.998376 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m10:14:12.999333 [info ] [MainThread]: dbt version: 1.12.3
+[0m10:14:12.999720 [info ] [MainThread]: python version: 3.13.14
+[0m10:14:13.000064 [info ] [MainThread]: python path: C:\Users\DELL\Desktop\PythonFaberlic_Project\venv\scripts\python.exe
+[0m10:14:13.000343 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m10:14:13.043936 [info ] [MainThread]: Using profiles dir at C:\Users\DELL\.dbt
+[0m10:14:13.044718 [info ] [MainThread]: Using profiles.yml file at C:\Users\DELL\.dbt\profiles.yml
+[0m10:14:13.045259 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Desktop\PythonFaberlic_Project\fabrilec_dbt\dbt_project.yml
+[0m10:14:13.057237 [info ] [MainThread]: adapter type: postgres
+[0m10:14:13.057724 [info ] [MainThread]: adapter version: 1.9.0
+[0m10:14:13.160983 [info ] [MainThread]: Configuration:
+[0m10:14:13.161531 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:14:13.161944 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:14:13.162423 [info ] [MainThread]: Required dependencies:
+[0m10:14:13.162818 [debug] [MainThread]: Executing "git --help"
+[0m10:14:13.202090 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:14:13.202709 [debug] [MainThread]: STDERR: "b''"
+[0m10:14:13.203074 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:14:13.203537 [info ] [MainThread]: Connection:
+[0m10:14:13.203958 [info ] [MainThread]:   host: localhost
+[0m10:14:13.204311 [info ] [MainThread]:   port: 5432
+[0m10:14:13.204576 [info ] [MainThread]:   user: fabdb
+[0m10:14:13.204830 [info ] [MainThread]:   database: fabdb
+[0m10:14:13.205109 [info ] [MainThread]:   schema: dbt_fab
+[0m10:14:13.205398 [info ] [MainThread]:   connect_timeout: 10
+[0m10:14:13.205772 [info ] [MainThread]:   role: None
+[0m10:14:13.206187 [info ] [MainThread]:   search_path: None
+[0m10:14:13.206606 [info ] [MainThread]:   keepalives_idle: 0
+[0m10:14:13.207039 [info ] [MainThread]:   sslmode: None
+[0m10:14:13.207471 [info ] [MainThread]:   sslcert: None
+[0m10:14:13.207909 [info ] [MainThread]:   sslkey: None
+[0m10:14:13.208304 [info ] [MainThread]:   sslrootcert: None
+[0m10:14:13.208717 [info ] [MainThread]:   application_name: dbt
+[0m10:14:13.209147 [info ] [MainThread]:   retries: 1
+[0m10:14:13.209851 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m10:14:13.440270 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m10:14:16.995078 [debug] [MainThread]: Using postgres connection "debug"
+[0m10:14:16.995459 [debug] [MainThread]: On debug: select 1 as id
+[0m10:14:16.995723 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:14:17.072040 [debug] [MainThread]: SQL status: SELECT 1 in 0.076 seconds
+[0m10:14:17.072958 [debug] [MainThread]: On debug: Close
+[0m10:14:17.073383 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:14:17.073790 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:14:17.074242 [info ] [MainThread]: Your new dbt project "fabrilec_dbt" was created!
+Initialized new project in C:\Users\DELL\Desktop\PythonFaberlic_Project\fabrilec_dbt\fabrilec_dbt
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:14:17.075466 [debug] [MainThread]: Command `dbt init` succeeded at 10:14:17.075278 after 81.13 seconds
+[0m10:14:17.075892 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:14:17.076237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B899220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B57B650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B8DF8A0>]}
+[0m10:14:17.076649 [debug] [MainThread]: Flushing usage events
+[0m10:14:17.976191 [debug] [MainThread]: An error was encountered while trying to flush usage events
