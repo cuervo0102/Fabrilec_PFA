@@ -8,7 +8,7 @@ load_dotenv()
 
 CHUNK_SIZE = 1500
 CHUNK_OVERLAP = 200
-CHROMA_PATH = "data/chroma_db"
+from src.fabrilec.config import CHROMA_PATH, BM25_CACHE_PATH
 COLLECTION_NAME = "fabrilec_tenders"
 
 
@@ -72,10 +72,13 @@ def main():
 
     client = chromadb.PersistentClient(path=CHROMA_PATH)
     try:
-        client.delete_collection(COLLECTION_NAME)
+        client.delete_collection(COLLECTION_NAME)   
     except Exception:
         pass
-    collection = client.create_collection(COLLECTION_NAME)
+    collection = client.get_or_create_collection(COLLECTION_NAME)   
+    existing_ids = collection.get(include=[])["ids"]
+    if existing_ids:
+        collection.delete(ids=existing_ids)
 
     all_chunks, all_ids, all_metadatas = [], [], []
     for doc in docs:
@@ -109,6 +112,11 @@ def main():
         print(f"  Embedded {min(i + batch_size, len(all_chunks))}/{len(all_chunks)} chunks")
 
     print(f"Done. Chroma collection '{COLLECTION_NAME}' has {collection.count()} chunks.")
+
+    bm25_cache = os.path.join(CHROMA_PATH, "bm25_index.pkl")
+    if os.path.exists(bm25_cache):
+        os.remove(bm25_cache)
+        print("Removed stale BM25 cache — it will rebuild on next search.")
 
 
 if __name__ == "__main__":

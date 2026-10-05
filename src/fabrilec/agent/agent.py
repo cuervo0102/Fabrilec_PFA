@@ -4,15 +4,13 @@ os.environ["ANONYMIZED_TELEMETRY"] = "False"
 
 
 import json
-import ollama
 import psycopg2
 from dotenv import load_dotenv
 
+from src.fabrilec.agent.llm_clients import generate
 from src.fabrilec.rag.hybrid_retrieval import HybridRetriever
 
 load_dotenv()
-
-MODEL = "llama3.1"
 
 _retriever = None  
 
@@ -35,7 +33,7 @@ def get_db_connection():
 
 def search_documents(query: str) -> str:
     retriever = get_retriever()
-    results = retriever.search(query, top_k=3)
+    results = retriever.search(query, top_k=5)
     if not results:
         return "Aucun résultat trouvé."
 
@@ -44,7 +42,7 @@ def search_documents(query: str) -> str:
         meta = r["metadata"]
         formatted.append(
             f"[Tender: {meta['tender_ref']} | Document: {meta['document_type']} | {meta['relative_path']}]\n"
-            f"{r['text'][:500]}"
+            f"{r['text'][:800]}"
         )
     return "\n\n---\n\n".join(formatted)
 
@@ -120,37 +118,103 @@ AVAILABLE_FUNCTIONS = {
 }
 
 
-def ask(question: str) -> str:
-    messages = [{"role": "user", "content": question}]
+SYSTEM_PROMPT = (
+    "Tu es l'assistant Fabrilec pour les dossiers d'appels d'offres (CCTP, CPS, RC, bordereaux des prix). "
+    "Réponds en français, uniquement à partir des résultats des outils. "
+    "Cite la référence du dossier (tender_ref) et le type de document quand tu t'appuies sur un extrait. "
+    "Si les résultats ne contiennent pas l'information, dis-le clairement au lieu d'inventer. "
+    "Utilise query_database pour les questions de comptage ou de métadonnées sur un dossier précis, "
+    "et search_documents pour le contenu des documents."
+    "Recopie les nombres exactement comme dans l'extrait. Si un nombre semble incohérent "
+    "(par exemple une virgule manquante), signale-le explicitement au lieu de le corriger. "
+    "Si query_database ne trouve aucun dossier, utilise search_documents avant de répondre. "
+    "Si la question ne concerne pas les dossiers d'appels d'offres, réponds poliment que tu ne peux "
+    "aider que sur ces dossiers, sans répondre à la question. Vouvoie toujours l'utilisateur. "
+    "Si une question mentionne une référence de dossier précise, vérifie toujours son existence "
+    "avec query_database avant de répondre, même si la question porte sur le contenu. "
+    "N'affirme jamais qu'un dossier n'existe pas uniquement parce que search_documents n'a rien "
+    "trouvé : cela signifie seulement que le contenu recherché n'a pas été localisé, pas que le "
+    "dossier est absent. Seul un résultat 'Aucun dossier trouvé' de query_database confirme "
+    "l'absence d'un dossier. Si search_documents ne trouve rien pour un dossier existant, dis-le "
+    "clairement (le dossier existe mais l'extrait demandé n'a pas été trouvé) plutôt que de nier "
+    "son existence."
+)
 
-    response = ollama.chat(model=MODEL, messages=messages, tools=TOOLS)
-    tool_calls = response["message"].get("tool_calls")
 
-    if not tool_calls:
-        return response["message"]["content"]
+def _parse_args(raw) -> dict:
+    """OpenAI-style tool calls give arguments as a JSON string (Ollama gave a dict)."""
+    if isinstance(raw, dict):
+        return raw
+    try:
+        return json.loads(raw or "{}")
+    except json.JSONDecodeError:
+        return {}
 
-    messages.append(response["message"])
 
-    for call in tool_calls:
-        func_name = call["function"]["name"]
-        func_args = call["function"]["arguments"]
-        func = AVAILABLE_FUNCTIONS.get(func_name)
+def _run_tool(func_name: str, func_args: dict) -> str:
+    func = AVAILABLE_FUNCTIONS.get(func_name)
+    if func is None:
+        return f"Erreur: outil inconnu '{func_name}'"
 
-        if func is None:
-            result = f"Erreur: outil inconnu '{func_name}'"
-        else:
-            if func_name == "search_documents":
-                arg_value = func_args.get("query") or next(iter(func_args.values()), "")
-            elif func_name == "query_database":
-                arg_value = func_args.get("tender_ref") or func_args.get("query") or next(iter(func_args.values()), "")
-            else:
-                arg_value = next(iter(func_args.values()), "")
-            result = func(arg_value)
+    if func_name == "search_documents":
+        arg_value = func_args.get("query") or next(iter(func_args.values()), "")
+    elif func_name == "query_database":
+        arg_value = func_args.get("tender_ref") or func_args.get("query") or next(iter(func_args.values()), "")
+    else:
+        arg_value = next(iter(func_args.values()), "")
 
-        messages.append({"role": "tool", "content": result, "name": func_name})
+    try:
+        return func(arg_value)
+    except Exception as e:  # a DB or index error should not crash the agent loop
+        return f"Erreur lors de l'exécution de {func_name}: {e}"
 
-    final_response = ollama.chat(model=MODEL, messages=messages, tools=TOOLS)
-    return final_response["message"]["content"]
+
+def ask_with_trace(question: str, max_rounds: int = 3) -> dict:
+    """Run the agent and also return what the tools produced (needed by the judge)."""
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": question},
+    ]
+    contexts, tool_calls_log = [], []
+
+    for round_no in range(max_rounds):
+        last_round = round_no == max_rounds - 1
+        # On the last round, forbid new tool calls so the model must answer.
+        response = generate(messages, tools=TOOLS, tool_choice="none" if last_round else "auto")
+        msg = response.choices[0].message
+
+        if not msg.tool_calls:
+            return {"answer": msg.content or "", "contexts": contexts, "tool_calls": tool_calls_log}
+
+        messages.append({
+            "role": "assistant",
+            "content": msg.content or "",
+            "tool_calls": [
+                {
+                    "id": c.id,
+                    "type": "function",
+                    "function": {"name": c.function.name, "arguments": c.function.arguments},
+                }
+                for c in msg.tool_calls
+            ],
+        })
+
+        for call in msg.tool_calls:
+            args = _parse_args(call.function.arguments)
+            result = _run_tool(call.function.name, args)
+            contexts.append(result)
+            tool_calls_log.append({"name": call.function.name, "args": args})
+            messages.append({"role": "tool", "tool_call_id": call.id, "content": result})
+
+    return {
+        "answer": "Désolé, je n'ai pas pu formuler de réponse complète.",
+        "contexts": contexts,
+        "tool_calls": tool_calls_log,
+    }
+
+
+def ask(question: str, max_rounds: int = 3) -> str:
+    return ask_with_trace(question, max_rounds)["answer"]
 
 
 if __name__ == "__main__":

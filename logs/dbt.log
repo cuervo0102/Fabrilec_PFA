@@ -73,3 +73,33 @@ Happy modeling!
 [0m10:14:17.076237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B899220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B57B650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C51B8DF8A0>]}
 [0m10:14:17.076649 [debug] [MainThread]: Flushing usage events
 [0m10:14:17.976191 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:06:45.458603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ECD74E510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019EC9E011D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ECFC0BB10>]}
+
+
+============================== 12:06:45.518108 | 35b0ec7e-d6b7-4a52-87ef-ae36e4ed8b84 ==============================
+[0m12:06:45.518108 [info ] [MainThread]: Running with dbt=1.12.3
+[0m12:06:45.519541 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\DELL\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'hints_enabled': 'True', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target dev', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:06:45.520529 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\DELL\Desktop\PythonFaberlic_Project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:06:45.522148 [debug] [MainThread]: Command `dbt run` failed at 12:06:45.521950 after 0.46 seconds
+[0m12:06:45.522693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ECFCE9BA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ECFC3BE30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019ECFD11040>]}
+[0m12:06:45.523618 [debug] [MainThread]: Flushing usage events
+[0m12:06:56.015325 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:25:25.042328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B44B22E510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4478F11D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B44D60BB10>]}
+
+
+============================== 20:25:25.047991 | b5368972-e9f6-42dd-aeb0-2f9ed31d06ea ==============================
+[0m20:25:25.047991 [info ] [MainThread]: Running with dbt=1.12.3
+[0m20:25:25.049005 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'hints_enabled': 'True', 'maximum_seed_size_mib': '1', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\DELL\\.dbt', 'partial_parse': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stg_raw_documents mart_documents_summary --target dev', 'send_anonymous_usage_stats': 'True'}
+[0m20:25:25.049813 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\DELL\Desktop\PythonFaberlic_Project\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:25:25.051442 [debug] [MainThread]: Command `dbt run` failed at 20:25:25.051074 after 0.22 seconds
+[0m20:25:25.051988 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B44D6E5BA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B44D63BE30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B44D711040>]}
+[0m20:25:25.052495 [debug] [MainThread]: Flushing usage events
+[0m20:25:34.484898 [debug] [MainThread]: An error was encountered while trying to flush usage events
