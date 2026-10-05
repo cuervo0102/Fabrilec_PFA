@@ -5,11 +5,11 @@ import chromadb
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 
-CHROMA_PATH = "data/chroma_db"
-COLLECTION_NAME = "fabrilec_tenders"
-BM25_CACHE_PATH = "data/chroma_db/bm25_index.pkl"
+from src.fabrilec.config import CHROMA_PATH, BM25_CACHE_PATH
 
-RRF_K = 60  
+COLLECTION_NAME = "fabrilec_tenders"
+
+RRF_K = 60
 
 
 def _tokenize(text: str) -> list[str]:

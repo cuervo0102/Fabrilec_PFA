@@ -1,4 +1,3 @@
-# src/fabrilec/extraction/doc.py
 import os
 import subprocess
 import tempfile

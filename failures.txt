@@ -1,0 +1,288 @@
+======================================================================
+RUN 1
+TOOLS: ['search_documents', 'query_database', 'query_database']
+ANSWER:
+Voici ce que j'ai trouvé concernant la **Direction Transport Région Centre Casablanca** (Office National de l'Électricité et de l'Eau Potable – Branche Électricité) :
+
+## Deux dossiers identifiés
+
+### 1. Dossier d'appel d'offres ouvert n° **TC4130724**
+- **Objet** : Refonte des lignes 60 kV du réseau Casablanca – Settat, comprenant notamment :
+  - N°266 DAOURAT – IMFOUT
+  - N°398 SIDI MAAROUF – BOUSKOURA
+  - N°240 LAAWAMER – SIDI MAAROUF
+  - N°16-2 SIDI CHEHOU – ONCF MECHRAA BEN ABBDOU
+  - N°16-3 ONCF MECHRAA BEN ABBDOU – ONCF RHAMNA
+  - N°230-1 ONCF SIDI AIDI – ONCF KHEMISSET
+  - N°230-2 ONCF KHEMISSET – IMFOUT
+- **Document disponible** : Cahier des charges (TC4130724-V01, type « AUTRE »)
+- **Métadonnées** : 1 document (OCR à vérifier), **aucun** CCTP, CPS, RC ni bordereau des prix détecté.
+
+### 2. Dossier **CCH TC4130723 – Extension poste 22 560 kV Benslimane II**
+- L'ouverture publique des plis a lieu aux bureaux du Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre Casablanca (Bd Ahl Loghlam, BP 2590 Sidi Moumen – Casablanca).
+- **Métadonnées** : 1 document (OCR à vérifier), **aucun** CCTP, CPS, RC ni bordereau des prix détecté.
+
+---
+
+⚠️ **Remarque** : les deux dossiers ne contiennent qu'un seul document de type « AUTRE » (cahier des charges / convocation), sans CCTP, CPS, RC ou bordereau des prix. Si vous cherchez un document spécifique (CCTP, RC, bordereau des prix…), il n'est pas présent dans les résultats.
+
+Souhaitez-vous que je détaille le contenu d'un de ces deux dossiers en particulier ?
+
+--- CONTEXT 1 ---
+[Tender: CCH TC4130723 Extension poste 22560 KV Benslimane II | Document: AUTRE | CCH TC4130723 Extension poste 22560 KV Benslimane II.pdf]
+
+- Soit remis au Président de la Commission d'Appel d'Offres en début de la séance publique d'ouverture
+des plis.
+
+L'ouverture publique des plis aura lieu le … .… à 09h00 (heure marocaine) aux bureaux du
+Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre
+Casablanca [Bd Ahl Loghlam, BP 2590 Sidi Moumen -— Casablanca- MAROC].
+
+L'ouverture des enveloppes se fait en un seul temps.
+
+Pour toute demande d’éclaircissement, renseignement ou réclamation conce
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+sl gi
+: Le pe L Branche Electricité
+Office National de l'Electricité et de l'Eau Poteble "e
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-_ N°398 SIDI MAAROUF — BOUSKOURA
+-_ N°240 LAAWAMER - SIDI MAAROUF
+-_ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+-__ N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _ N°2
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+ROYAUME DU MAROC
+
+ets g Us
+
+Branche Electricité
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-__N°398 SIDI MAAROUF — BOUSKOURA
+-__N°240 LAAWAMER - SIDI MAAROUF
+- _ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+- _N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- _ N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _N°230-2 ONCF KHEMISSET — IMFOUT
+
+AO N° TC41307
+
+--- CONTEXT 2 ---
+Dossier: TC4130724
+Documents: 1 (fiables: 0, OCR à vérifier: 1, échecs: 0)
+Contient CCTP: False, CPS: False, RC: False, Bordereau des prix: False
+
+--- CONTEXT 3 ---
+Dossier: CCH TC4130723 Extension poste 22560 KV Benslimane II
+Documents: 1 (fiables: 0, OCR à vérifier: 1, échecs: 0)
+Contient CCTP: False, CPS: False, RC: False, Bordereau des prix: False
+======================================================================
+RUN 2
+TOOLS: ['query_database', 'search_documents']
+ANSWER:
+Le dossier d'appel d'offres de la **Direction Transport Région Centre Casablanca** (Office National de l'Électricité et de l'Eau Potable – Branche Électricité) correspond au **dossier d'appel d'offres ouvert n° TC4130724**.
+
+**Objet du dossier :**
+Refonte des lignes 60 kV du réseau Casablanca – Settat, comprenant notamment :
+- N°266 DAOURAT – IMFOUT
+- N°398 SIDI MAAROUF – BOUSKOURA
+- N°240 LAAWAMER – SIDI MAAROUF
+- N°16-2 SIDI CHEHOU – ONCF MECHRAA BEN ABBDOU
+- N°16-3 ONCF MECHRAA BEN ABBDOU – ONCF RHAMNA
+- N°230-1 ONCF SIDI AIDI – ONCF KHEMISSET
+- N°230-2 ONCF KHEMISSET – IMFOUT
+
+**Lieu d'ouverture des plis :**
+L'ouverture publique des plis a lieu à 09h00 (heure marocaine) aux bureaux du Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre Casablanca, Bd Ahl Loghlam, BP 2590 Sidi Moumen – Casablanca (Maroc). L'ouverture des enveloppes se fait en un seul temps.
+
+**Documents identifiés :**
+- Le cahier des charges (document « AUTRE » : *Cahier des charges TC4130724-V01.pdf*).
+
+**Remarque :**
+- La référence exacte du dossier dans la base n'est pas « Direction Transport Région Centre Casablanca » (ce nom désigne la direction, pas le numéro de dossier) ; le numéro de référence est **TC4130724**.
+- Une autre référence, **CCH TC4130723** (Extension poste 22 560 kV Benslimane II), mentionne également cette même Direction Transport Région Centre Casablanca comme lieu d'ouverture des plis, mais il s'agit d'un dossier distinct.
+
+Si vous souhaitez des détails précis (délais, pénalités, bordereaux des prix, etc.), précisez votre question.
+
+--- CONTEXT 1 ---
+Aucun dossier trouvé correspondant à 'Direction Transport Région Centre Casablanca'.
+
+--- CONTEXT 2 ---
+[Tender: CCH TC4130723 Extension poste 22560 KV Benslimane II | Document: AUTRE | CCH TC4130723 Extension poste 22560 KV Benslimane II.pdf]
+
+- Soit remis au Président de la Commission d'Appel d'Offres en début de la séance publique d'ouverture
+des plis.
+
+L'ouverture publique des plis aura lieu le … .… à 09h00 (heure marocaine) aux bureaux du
+Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre
+Casablanca [Bd Ahl Loghlam, BP 2590 Sidi Moumen -— Casablanca- MAROC].
+
+L'ouverture des enveloppes se fait en un seul temps.
+
+Pour toute demande d’éclaircissement, renseignement ou réclamation conce
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+sl gi
+: Le pe L Branche Electricité
+Office National de l'Electricité et de l'Eau Poteble "e
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-_ N°398 SIDI MAAROUF — BOUSKOURA
+-_ N°240 LAAWAMER - SIDI MAAROUF
+-_ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+-__ N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _ N°2
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+ROYAUME DU MAROC
+
+ets g Us
+
+Branche Electricité
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-__N°398 SIDI MAAROUF — BOUSKOURA
+-__N°240 LAAWAMER - SIDI MAAROUF
+- _ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+- _N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- _ N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _N°230-2 ONCF KHEMISSET — IMFOUT
+
+AO N° TC41307
+======================================================================
+RUN 3
+TOOLS: ['query_database', 'search_documents']
+ANSWER:
+Le dossier d'appel d'offres de la **Direction Transport Région Centre Casablanca** (Office National de l'Électricité et de l'Eau Potable – Branche Électricité) correspond au **dossier d'appel d'offres ouvert n° TC4130724**.
+
+**Objet du dossier :**
+Refonte des lignes 60 kV du réseau Casablanca – Settat, comprenant notamment :
+- N°266 DAOURAT – IMFOUT
+- N°398 SIDI MAAROUF – BOUSKOURA
+- N°240 LAAWAMER – SIDI MAAROUF
+- N°16-2 SIDI CHEHOU – ONCF MECHRAA BEN ABBDOU
+- N°16-3 ONCF MECHRAA BEN ABBDOU – ONCF RHAMNA
+- N°230-1 ONCF SIDI AIDI – ONCF KHEMISSET
+- N°230-2 ONCF KHEMISSET – IMFOUT
+
+**Lieu d'ouverture des plis :**
+L'ouverture publique des plis a lieu à 09h00 (heure marocaine) aux bureaux du Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre Casablanca, Bd Ahl Loghlam, BP 2590 Sidi Moumen – Casablanca (Maroc). L'ouverture des enveloppes se fait en un seul temps.
+
+**Références citées :**
+- Dossier **TC4130724** – document « Cahier des charges TC4130724-V01.pdf » (type AUTRE)
+- Dossier **CCH TC4130723** (Extension poste 22560 kV Benslimane II) – document « CCH TC4130723 Extension poste 22560 KV Benslimane II.pdf » (type AUTRE), qui mentionne également la même Direction Transport Région Centre Casablanca comme lieu d'ouverture des plis.
+
+Si vous souhaitez des précisions sur un point particulier (délais, pénalités, bordereaux des prix, etc.), précisez votre question.
+
+--- CONTEXT 1 ---
+Aucun dossier trouvé correspondant à 'Direction Transport Région Centre Casablanca'.
+
+--- CONTEXT 2 ---
+[Tender: CCH TC4130723 Extension poste 22560 KV Benslimane II | Document: AUTRE | CCH TC4130723 Extension poste 22560 KV Benslimane II.pdf]
+
+- Soit remis au Président de la Commission d'Appel d'Offres en début de la séance publique d'ouverture
+des plis.
+
+L'ouverture publique des plis aura lieu le … .… à 09h00 (heure marocaine) aux bureaux du
+Service Approvisionnements et Gestion des Stocks relevant de la Direction Transport Région Centre
+Casablanca [Bd Ahl Loghlam, BP 2590 Sidi Moumen -— Casablanca- MAROC].
+
+L'ouverture des enveloppes se fait en un seul temps.
+
+Pour toute demande d’éclaircissement, renseignement ou réclamation conce
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+sl gi
+: Le pe L Branche Electricité
+Office National de l'Electricité et de l'Eau Poteble "e
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-_ N°398 SIDI MAAROUF — BOUSKOURA
+-_ N°240 LAAWAMER - SIDI MAAROUF
+-_ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+-__ N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _ N°2
+
+---
+
+[Tender: TC4130724 | Document: AUTRE | Cahier des charges TC4130724-V01.pdf]
+ROYAUME DU MAROC
+
+ets g Us
+
+Branche Electricité
+
+DIRECTION TRANSPORT REGION CENTRE CASABLANCA
+
+DOSSIER D'APPEL D'OFFRES OUVERT
+N° TC4130724
+
+AYANT POUR OBJET :
+
+Refonte des lignes 60kV du réseau Casablanca - Settat :
+-__N°266 DAOURAT -— IMFOUT
+-__N°398 SIDI MAAROUF — BOUSKOURA
+-__N°240 LAAWAMER - SIDI MAAROUF
+- _ N°16-2 SIDI CHEHOU — ONCF MECHRAA BEN ABBDOU
+- _N°16-3 ONCF MECHRAA BEN ABBDOU -ONCF RHAMNA
+- _ N°230-1 ONCF SIDI AIDI — ONCF KHEMISSET
+- _N°230-2 ONCF KHEMISSET — IMFOUT
+
+AO N° TC41307
