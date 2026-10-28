@@ -144,10 +144,8 @@ The DAG chains extraction → Postgres → `dbt run` → RAG reindex automatical
 
 ## Challenges solved
 
-- Windows long-path limits breaking OCR (`LongPathsEnabled` + `\\?\` prefix workaround)
 - Corrupted LibreOffice install, replaced by Word COM automation for `.doc` files
 - Unstable local LLM inference, mitigated by moving to hosted OpenAI-compatible APIs
-- Stale BM25 cache after Chroma rebuilds causing `KeyError` on new chunks
 - Agent wrongly claiming a tender "doesn't exist" when content search found nothing, fixed by forcing a database lookup first
 
 ## Known limitations
@@ -159,7 +157,7 @@ The DAG chains extraction → Postgres → `dbt run` → RAG reindex automatical
 
 ## Roadmap
 
-- Knowledge graph (Neo4j)
+
 - Multi-agent orchestration
 - Monitoring and CI/CD
 - Delay forecasting (Prophet / MLflow)
@@ -167,6 +165,4 @@ The DAG chains extraction → Postgres → `dbt run` → RAG reindex automatical
 ## Authors
 
 - **Siham Essaji** ([@cuervo0102](https://github.com/cuervo0102))
-- **Douae Zikki**
 
-Engineering students, EMSI Marrakech (AI & Data Science).
