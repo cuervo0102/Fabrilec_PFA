@@ -112,8 +112,8 @@ Orchestrated by **Apache Airflow** (Docker) with dynamic task mapping per dossie
 ### Installation
 
 ```bash
-git clone https://github.com/cuervo0102/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/cuervo0102/Fabrilec_PFA.git
+cd Fabrilec_PFA
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
